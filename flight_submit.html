@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Success</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5); /* Colorful gradient background */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #success-message {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="success-message">✈️ Flight Booking Successful! ✈️</div>
+
+    <script>
+        // Confetti animation
+        function launchConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#FFC300', '#FF5733', '#C70039', '#900C3F', '#581845']
+            });
+
+            // Continue to trigger confetti in intervals
+            setTimeout(launchConfetti, 3000); // Repeat the confetti every 3 seconds for a continuous effect
+        }
+
+        // Start the confetti on page load
+        window.onload = launchConfetti;
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Package card styling */
+        .package-card {
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+
+        .package-card h3 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .package-card img {
+            width: 300px; /* Set your desired width */
+            height: 200px; /* Set your desired height */
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Hidden form styling */
+        .form-container {
+            display: none;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:hover {
+            border-color: #2980b9;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2980b9;
+            box-shadow: 0 0 5px rgba(41, 128, 185, 0.5);
+        }
+
+        /* Button styling */
+        button.btn-primary, button.view-form-btn {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button.btn-primary:hover, button.view-form-btn:hover {
+            background-color: #3498db;
+            transform: translateY(-2px);
+        }
+
+        button.btn-primary:active, button.view-form-btn:active {
+            background-color: #2980b9;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Tour Packages</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="vehicles.html">Vehicle Booking</a></li>
+                    <li><a href="rooms.html">Room Booking</a></li>
+                    <li><a href="flights.html">Flight Booking</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="packages" class="section">
+        <div class="container">
+            <h2>Choose Your Tour Package</h2>
+
+            <!-- Package 1: European Tour -->
+            <div class="package-card">
+                <img src="europeantour.jpeg" alt="European Tour" class="package-image">
+                <h3>European Tour</h3>
+                <p>10 days in France, Italy, and Germany.</p>
+                <button class="view-form-btn" onclick="toggleForm('form-european')">View Form</button>
+                <div id="form-european" class="form-container">
+                    <form id="european-tour-form">
+                        <label for="user-name-europe">Name:</label>
+                        <input type="text" id="user-name-europe" placeholder="Enter your name" required>
+
+                        <label for="user-email-europe">Email:</label>
+                        <input type="email" id="user-email-europe" placeholder="Enter your email" required>
+
+                        <label for="user-phone-europe">Phone Number:</label>
+                        <input type="tel" id="user-phone-europe" placeholder="Enter your phone number" required>
+
+                        <label for="travel-date-europe">Travel Date:</label>
+                        <input type="date" id="travel-date-europe" required>
+
+                        <input type="hidden" value="European Tour" id="package-name-europe">
+                        <button class="btn-primary" type="submit">Book European Tour</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Package 2: Asian Adventure -->
+            <div class="package-card">
+                <img src="asianadventure.jpeg" alt="Asian Adventure" class="package-image">
+                <h3>Asian Adventure</h3>
+                <p>7 days in Japan, China, and Thailand.</p>
+                <button class="view-form-btn" onclick="toggleForm('form-asian')">View Form</button>
+                <div id="form-asian" class="form-container">
+                    <form id="asian-adventure-form">
+                        <label for="user-name-asia">Name:</label>
+                        <input type="text" id="user-name-asia" placeholder="Enter your name" required>
+
+                        <label for="user-email-asia">Email:</label>
+                        <input type="email" id="user-email-asia" placeholder="Enter your email" required>
+
+                        <label for="user-phone-asia">Phone Number:</label>
+                        <input type="tel" id="user-phone-asia" placeholder="Enter your phone number" required>
+
+                        <label for="travel-date-asia">Travel Date:</label>
+                        <input type="date" id="travel-date-asia" required>
+
+                        <input type="hidden" value="Asian Adventure" id="package-name-asia">
+                        <button class="btn-primary" type="submit">Book Asian Adventure</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Package 3: Tropical Getaway -->
+            <div class="package-card">
+                <img src="tropical.jpeg" alt="Tropical Getaway" class="package-image">
+                <h3>Tropical Getaway</h3>
+                <p>Relax for 5 days in the Maldives and Bali.</p>
+                <button class="view-form-btn" onclick="toggleForm('form-tropical')">View Form</button>
+                <div id="form-tropical" class="form-container">
+                    <form id="tropical-getaway-form">
+                        <label for="user-name-tropical">Name:</label>
+                        <input type="text" id="user-name-tropical" placeholder="Enter your name" required>
+
+                        <label for="user-email-tropical">Email:</label>
+                        <input type="email" id="user-email-tropical" placeholder="Enter your email" required>
+
+                        <label for="user-phone-tropical">Phone Number:</label>
+                        <input type="tel" id="user-phone-tropical" placeholder="Enter your phone number" required>
+
+                        <label for="travel-date-tropical">Travel Date:</label>
+                        <input type="date" id="travel-date-tropical" required>
+
+                        <input type="hidden" value="Tropical Getaway" id="package-name-tropical">
+                        <button class="btn-primary" type="submit">Book Tropical Getaway</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Travel with Us. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript function to toggle the form visibility
+        function toggleForm(formId) {
+            const form = document.getElementById(formId);
+            if (form.style.display === "none" || form.style.display === "") {
+                form.style.display = "block";  // Show the form
+            } else {
+                form.style.display = "none";   // Hide the form
+            }
+        }
+    </script>
+</body>
+</html>
